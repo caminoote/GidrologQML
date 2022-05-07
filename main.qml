@@ -28,7 +28,14 @@ Window {
         anchors.fill: parent
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 15
-
+        Text {
+            anchors.fill: parent
+            text: "Could not connect to SQL"
+            color: "red"
+            font.pointSize: 20
+            font.bold: true
+            visible: IsConnectionOpen == false
+        }
         ListView {
             id: rivList
             anchors.fill: parent
@@ -37,6 +44,7 @@ Window {
             clip: true
             activeFocusOnTab: true  // реагирование на перемещение между элементами ввода с помощью Tab
             focus: true  // элемент может получить фокус
+            opacity: {if (IsConnectionOpen == true) {100} else {0}}
         }
     }
     }

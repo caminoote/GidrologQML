@@ -6,9 +6,9 @@
 
 RiverList::RiverList(QObject* parent):QAbstractListModel(parent)
 {
-    add("Речка 1", "длинная", "В Черное Море", "большой", "1000");
-    add("Речка 2", "средняя", "В Черное Море", "средний", "501");
-    add("Речка 2", "короткая", "В Черное Море", "маленький", "1030");
+    add("Речка 1", "100", "В Черное Море", "большой", "1000");
+    add("Речка 2", "200", "В Черное Море", "средний", "501");
+    add("Речка 2", "300", "В Черное Море", "маленький", "1030");
 }
 
 RiverList::~RiverList()
@@ -94,8 +94,9 @@ QString RiverList::count(const QString& textSelArea){ //считаем речк�
     int count = 0;
     for(int i = 0; i < listOfRivers.size(); i++)
     {
+
         QString temp = listOfRivers[i].getLenght();
-        if(temp.compare(textSelArea, Qt::CaseInsensitive) == 0)
+        if(textSelArea < temp)
             count++;
     }
     QString c = QString::number(count);

@@ -1,6 +1,8 @@
-QT += qml quick widgets
+QT += qml quick widgets sql
 
 CONFIG += c++11
+
+QTPLUGIN +=
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -8,12 +10,10 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    river.cpp \
-    riverlist.cpp
+    riverlistsql.cpp
 
 HEADERS += \
-    river.h \
-    riverlist.h
+    riverlistsql.h
 
 FORMS +=
 
